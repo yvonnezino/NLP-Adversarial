@@ -1,20 +1,19 @@
-/*
-On startup, connect to the "ping_pong" app.
-*/
-var port = browser.runtime.connectNative("ping_pong");
+function onResponse(response) {
+  console.log("Received " + response);
+}
 
-/*
-Listen for messages from the app.
-*/
-port.onMessage.addListener((response) => {
-  console.log("Received: " + response);
-});
+function onError(error) {
+  console.log(`Error: ${error}`);
+}
 
 /*
 On a click on the browser action, send the app a message.
 */
 browser.browserAction.onClicked.addListener(() => {
   console.log("Sending:  ping");
-  console.log(port)
-  port.postMessage("ping");
+  var sending = browser.runtime.sendNativeMessage(
+    "ping_pong",
+    "ping");
+    console.log(sending)
+  sending.then(onResponse, onError);
 });
