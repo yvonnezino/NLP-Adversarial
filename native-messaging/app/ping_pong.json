@@ -1,7 +1,7 @@
 {
   "name": "ping_pong",
   "description": "Example host for native messaging",
-  "path": "/Users/yvonnezino/Documents/NLP-Adversarial/native-messaging/app/ping_pong.py",
+  "path": "/Users/StephenSigman/Desktop/NLP-Adversarial/native-messaging/app/ping_pong.py",
   "type": "stdio",
-  "allowed_extensions": [ "ping_pong@example.org" ]
+  "allowed_origins": ["chrome-extension://ping_pong@example.org/"]
 }
