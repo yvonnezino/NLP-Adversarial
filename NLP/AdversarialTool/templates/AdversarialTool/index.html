@@ -1,0 +1,25 @@
+{% extends "AdversarialTool/layout.html" %}
+{% block body %}
+<div style="height: 200px;"></div>
+<div class="grid-container-element">
+
+    <div class="grid-child-element input">
+    <h2>Enter text to see how it will be classified: </h2>
+        <form action="{% url 'AdversarialTool:index' %}" method="post">
+            {% csrf_token %}
+            {{form}}
+            <br>
+            <input type="submit" value="Check Classification">
+        </form>
+        </div>
+
+        <div class="grid-child-element output">
+        {% if textInputted %}
+            <h2>The given text is currently classified as TODO </h2>
+            <h3>{{givenText}}</h3>
+            <h3>This slightly altered text is classified as TODO </h3>
+    {% endif %}
+    </div>
+
+</div>
+{% endblock %}
