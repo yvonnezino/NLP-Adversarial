@@ -15,3 +15,5 @@ result = sentiment_analysis(neg_text)[0]
 print("Label:", result['label'])
 print("Confidence Score:", result['score'])
 
+def predictSentiment(text):
+    return sentiment_analysis(text)[0]
