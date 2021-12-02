@@ -8,8 +8,9 @@ y = np.dot(X,np.array([1,2]))+3
 
 reg = LinearRegression().fit(X,y)
 
-def predict():
-    predict = reg.predict(np.array([[3,5]]))
+def predict(inputText):
+    print(inputText)
+    predict = reg.predict([inputText])
     return predict 
 
 #print(predict)
