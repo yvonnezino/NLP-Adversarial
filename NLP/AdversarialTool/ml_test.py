@@ -13,4 +13,4 @@ def predict(inputText):
     predict = reg.predict([inputText])
     return predict 
 
-#print(predict)
+# print(predict())
