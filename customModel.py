@@ -1,11 +1,15 @@
 import csv 
 from transformers import DistilBertTokenizerFast, BertTokenizer, AdamW, DistilBertForSequenceClassification
 from sklearn.model_selection import train_test_split
-from transformers import AutoModelForSequenceClassification, Trainer, TrainingArguments
+from transformers import AutoModelForSequenceClassification, Trainer, TrainingArguments, AutoModel
 from torch.utils.data import DataLoader
 import torch
 from datasets import load_metric
+from sklearn.model_selection import KFold
+import pandas as pd
+import os
 
+os.makedirs("/NLP-Adversarial/saveModel")
 
 tokenizer = DistilBertTokenizerFast.from_pretrained('distilbert-base-uncased')
 
@@ -31,7 +35,7 @@ def load_training_data():
         texts.append(row[3])
         labels.append(int(row[5]))
     file.close()
-    
+
     return texts, labels
 
 print("loading training data")
@@ -89,4 +93,7 @@ trainer = Trainer(
 )
 
 print(trainer.train())
+model.save_pretrained("/NLP-Adversarial/saveModel")
+model = AutoModel.from_pretrained("/NLP-Adversarial/saveModel")
+
 
