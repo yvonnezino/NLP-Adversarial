@@ -1,16 +1,3 @@
-import numpy as np
-from sklearn.linear_model import LinearRegression
-# import textattack
-
-X = np.array([[1,1],[1,2],[2,2],[2,3]])
-
-y = np.dot(X,np.array([1,2]))+3
-
-reg = LinearRegression().fit(X,y)
-
-def predict(inputText):
-    print(inputText)
-    predict = reg.predict([inputText])
-    return predict 
-
-# print(predict())
+version https://git-lfs.github.com/spec/v1
+oid sha256:f9f2884ddb6c235b8678f6ad7f75bebee58ca7541abbd033086e7a4c939dfae4
+size 322

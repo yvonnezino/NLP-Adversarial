@@ -1,25 +1,3 @@
-{% extends "AdversarialTool/layout.html" %}
-{% block body %}
-<div style="height: 200px;"></div>
-<div class="grid-container-element">
-
-    <div class="grid-child-element input">
-    <h2>Enter text to see how it will be classified: </h2>
-        <form action="{% url 'AdversarialTool:index' %}" method="post">
-            {% csrf_token %}
-            {{form}}
-            <br>
-            <input type="submit" value="Check Classification">
-        </form>
-        </div>
-
-        <div class="grid-child-element output">
-        {% if textInputted %}
-            <h2>The given text is currently classified as {{classification}} </h2>
-            <h3>{{givenText}}</h3>
-            <h3>This slightly altered text is classified as {{classification}} </h3>
-    {% endif %}
-    </div>
-
-</div>
-{% endblock %}
+version https://git-lfs.github.com/spec/v1
+oid sha256:a9feccc7c74470144cf65d70bb06184f873de2dfae52dcfcdee8a0b7bb482e75
+size 800

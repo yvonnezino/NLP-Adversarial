@@ -1,7 +1,3 @@
-{
-  "name": "ping_pong",
-  "description": "Example host for native messaging",
-  "path": "/Users/StephenSigman/Desktop/NLP-Adversarial/native-messaging/app/ping_pong.py",
-  "type": "stdio",
-  "allowed_origins": ["chrome-extension://ping_pong@example.org/"]
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:76af6b71f288e808c725d0988ecc562accc33911d17506b892c4b8f5b9ffbff4
+size 259

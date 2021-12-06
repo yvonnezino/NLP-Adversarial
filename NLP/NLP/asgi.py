@@ -1,16 +1,3 @@
-"""
-ASGI config for NLP project.
-
-It exposes the ASGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/3.2/howto/deployment/asgi/
-"""
-
-import os
-
-from django.core.asgi import get_asgi_application
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'NLP.settings')
-
-application = get_asgi_application()
+version https://git-lfs.github.com/spec/v1
+oid sha256:985ef3fbb3a6c4cb624d25d514c110f8c93e572c80ee6ec6a50474aae6f60f7c
+size 383
