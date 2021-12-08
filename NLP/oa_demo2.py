@@ -37,7 +37,7 @@ def main():
         1, # 1 for positive
     ]
 })
-    ieval = attack_eval.ieval(dataset)
+    ieval = attack_eval.ieval(simple_dataset)
     for input in ieval:
         print(input)
     # Using visualize=True in attack_eval.eval can make it displays a visualized result. This function is really useful for analyzing small datasets.
