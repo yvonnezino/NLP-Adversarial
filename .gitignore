@@ -48,3 +48,8 @@ data/Victim.BERT.SST/pytorch_model.bin
 data/Victim.BERT.SST/special_tokens_map.json
 data/Victim.BERT.SST/tokenizer_config.json
 data/Victim.BERT.SST/vocab.txt
+data/AttackAssist.SGAN/a.pkl
+data/AttackAssist.SGAN/d.pkl
+data/AttackAssist.SGAN/g.pkl
+data/AttackAssist.SGAN/i.pkl
+data/AttackAssist.SGAN/vocab.json
