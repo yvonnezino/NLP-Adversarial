@@ -1,19 +1,3 @@
-from transformers import pipeline
-
-sentiment_analysis = pipeline("sentiment-analysis")
-
-pos_text = "I enjoy studying computational algorithms."
-neg_text = "I dislike sleeping late everyday."
-
-
-# result = sentiment_analysis(pos_text)[0]
-# print("Label:", result['label'])
-# print("Confidence Score:", result['score'])
-# print()
-
-# result = sentiment_analysis(neg_text)[0]
-# print("Label:", result['label'])
-# print("Confidence Score:", result['score'])
-
-def predictSentiment(text):
-    return sentiment_analysis(text)[0]
+version https://git-lfs.github.com/spec/v1
+oid sha256:7c8a1fada0dcbf26a931eb3324473d644b905b5521a411f2ec5bafb4dafd6c40
+size 815
