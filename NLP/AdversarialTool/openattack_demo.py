@@ -31,25 +31,47 @@ def dataset_mapping(x):
         "y": 1 if x["label"] > 0.5 else 0,
     }
 
+def text_input(model):
+    text = input("Write a sentence: ")
+    label = model.get_pred([text])
+    
+    adv_data = datasets.Dataset.from_dict({
+    "x": [
+        text
+    ],
+    "y": [
+        label
+    ]
+})
+
+    return adv_data
+
+
 def main():
 
     print("New Attacker")
-    attacker = OpenAttack.attackers.PWWSAttacker()
+    attacker = OpenAttack.attackers.BERTAttacker()
 
     print("Build model")
-    clsf = OpenAttack.loadVictim("BERT.SST")
+    # clsf = OpenAttack.loadVictim("BERT.SST")
+    clsf = make_model()
 
-    dataset = datasets.load_dataset("sst", split="train[:100]").map(function=dataset_mapping)
+    adv_data = text_input(clsf)
+
+    # dataset = datasets.load_dataset("sst", split="train[:100]").map(function=dataset_mapping)
 
     print("Start attack")
     attack_eval = OpenAttack.AttackEval( attacker, clsf, metrics=[
         OpenAttack.metric.Fluency(),
         OpenAttack.metric.GrammaticalErrors(),
-        OpenAttack.metric.SemanticSimilarity(),
+        # OpenAttack.metric.SemanticSimilarity(),
         OpenAttack.metric.EditDistance(),
         OpenAttack.metric.ModificationRate()
     ] )
-    attack_eval.eval(dataset, visualize=True, progress_bar=True)
+    # attack_eval.eval(adv_data, visualize=True, progress_bar=True)
+    eval = attack_eval.ieval(adv_data)
+    print( next(eval))
+
 
 if __name__ == "__main__":
     main()

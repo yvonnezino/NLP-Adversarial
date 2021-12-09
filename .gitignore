@@ -53,3 +53,12 @@ data/AttackAssist.SGAN/d.pkl
 data/AttackAssist.SGAN/g.pkl
 data/AttackAssist.SGAN/i.pkl
 data/AttackAssist.SGAN/vocab.json
+data/AttackAssist.SCPN/bpe.codes
+data/AttackAssist.SCPN/parse_generator.pt
+data/AttackAssist.SCPN/parse_vocab.pkl
+data/AttackAssist.SCPN/ptb_tagset.pkl
+data/AttackAssist.SCPN/scpn.pt
+data/AttackAssist.SCPN/vocab.txt
+data/TProcess.StanfordParser/englishPCFG.ser.gz
+data/TProcess.StanfordParser/stanford-parser-3.9.2-models.jar
+data/TProcess.StanfordParser/stanford-parser.jar
